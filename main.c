@@ -2,6 +2,7 @@
 
 void tri_selection(int[],int);
 int schtroumpf(int[], int, int[], int);
+void delete(int[], int);
 
 int main() {
     const int n = 6, m = 7;
@@ -24,6 +25,8 @@ int main() {
                     scanf("%d", T2[i]);
                 }
                 printf("The schtroumpf is %d", schtroumpf(T, n, T2, m)); break;
+            case 4:
+                delete(T, n); break;
             default:
                 printf("Exercise does not exist"); break;
         }
@@ -78,4 +81,31 @@ int schtroumpf(int T[], int n, int T2[], int m){
     }
 
     return s;
+}
+
+void delete(int T[], int n){
+    printf("\n******************************* Exercise 4: Delete an element in an array *******************************\n");
+    int pos;
+    printf( " Define the position of the array element where you want to delete: ");
+    scanf(" %d", &pos);
+    if(pos >= n + 1)
+    {
+        printf (" \n Deletion is not possible in the array.");
+    }
+    else
+    {
+        for(int i = pos - 1; i < n - 1; i++)
+        {
+            T[i] = T[i + 1];
+        }
+
+        printf(" \n The resultant array is: \n");
+
+        // display the final array
+        for (int i = 0; i < n - 1; i++)
+        {
+            printf(" arr[%d] = ", i);
+            printf(" %d \n", T[i]);
+        }
+    }
 }
