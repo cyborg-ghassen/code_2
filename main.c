@@ -22,7 +22,7 @@ int main() {
                 printf("Please fill the other array\n");
                 for (int i = 0; i < m; i++) {
                     printf("Enter Element %d: ", i);
-                    scanf("%d", T2[i]);
+                    scanf("%d", &T2[i]);
                 }
                 printf("The schtroumpf is %d", schtroumpf(T, n, T2, m)); break;
             case 4:
